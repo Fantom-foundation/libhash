@@ -1,25 +1,12 @@
 use crate::errors::Error;
-use serde::{Deserialize, Serialize};
-
-// Hash type used in
-#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
-pub struct Hash(pub [u8; 32]);
+use serde::Serialize;
 
 pub trait Hashing {
+    type Hash: AsRef<[u8]>;
+    /// creates new Hash out of digest provided
+    fn new(digest: &[u8]) -> Self::Hash;
     /// creates new Hash out of serialisable data provided
-    fn hash<D: Serialize>(data: &D) -> Result<Hash, Error>;
-    // creates new Hash out of digest provided
-    fn new(digest: &[u8]) -> Hash {
-        let mut a: [u8; 32] = [0; 32];
-        a.copy_from_slice(&digest[0..32]);
-        Hash(a)
-    }
-}
-
-impl AsRef<[u8]> for Hash {
-    fn as_ref(&self) -> &[u8] {
-        self.0.as_ref()
-    }
+    fn hash<D: Serialize>(data: &D) -> Result<Self::Hash, Error>;
 }
 
 pub mod errors;
