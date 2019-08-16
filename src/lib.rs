@@ -6,7 +6,9 @@ use serde::{Deserialize, Serialize};
 pub struct Hash(pub [u8; 32]);
 
 pub trait Hashing {
+    /// creates new Hash out of serialisable data provided
     fn hash<D: Serialize>(data: &D) -> Result<Hash, Error>;
+    // creates new Hash out of digest provided
     fn new(digest: &[u8]) -> Hash {
         let mut a: [u8; 32] = [0; 32];
         a.copy_from_slice(&digest[0..32]);
