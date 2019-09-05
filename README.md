@@ -16,6 +16,10 @@ We use [rust-clippy](https://github.com/rust-lang-nursery/rust-clippy) linters t
 
 There are plenty of [IDEs](https://areweideyet.com) and other [Rust development tools to consider](https://github.com/rust-unofficial/awesome-rust#development-tools).
 
+This crate defines a trait which contains commonly used behaviours for hashing.
+An example of an implementation of this trait can be found in the libhash-sha3 crate:
+(https://github.com/Fantom-foundation/libhash-sha3).
+
 ### Step-by-step guide
 ```bash
 # Install Rust (nightly)
