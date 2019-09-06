@@ -3,8 +3,8 @@
 use crate::errors::Error;
 use serde::Serialize;
 
-//! The Hashing trait. So far, the trait requires an array of 8-bit unsigned integers as a defined
-//! type.
+/// The Hashing trait. So far, the trait requires an array of 8-bit unsigned integers as a defined
+/// type.
 pub trait Hashing {
     type Hash: AsRef<[u8]>;
     /// Creates new Hash out of the provided digest.
