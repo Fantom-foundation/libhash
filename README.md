@@ -18,7 +18,7 @@ There are plenty of [IDEs](https://areweideyet.com) and other [Rust development 
 
 This crate defines a trait which contains commonly used behaviours for hashing.
 An example of an implementation of this trait can be found in the libhash-sha3 crate:
-(https://github.com/Fantom-foundation/libhash-sha3).
+[`libhash-sha3`](https://github.com/Fantom-foundation/libhash-sha3)
 
 ### Step-by-step guide
 ```bash
