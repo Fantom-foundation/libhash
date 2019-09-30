@@ -9,11 +9,11 @@ use to_vec::ToVec;
 /// type.
 pub trait Hash: AsRef<[u8]> + ToVec<u8> + Default + CoreHash + Copy + PartialEq {
     /// Creates new Hash out of the provided digest.
-    fn new(digest: &[u8]) -> Self
+    fn new_from_digest(digest: &[u8]) -> Self
     where
         Self: Sized;
     /// Creates a new hash from the inputted data. Data must be serializable for hash to function.
-    fn hash<D: Serialize>(data: &D) -> Result<Self, Error>
+    fn new<D: Serialize>(data: &D) -> Result<Self, Error>
     where
         Self: Sized;
 }
