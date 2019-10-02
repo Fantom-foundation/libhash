@@ -1,6 +1,8 @@
 //! This crate defines a trait which contains commonly used behaviours for hashing.
 //! An example of an implementation of this trait can be found in the [`libhash-sha3`](https://github.com/Fantom-foundation/libhash-sha3) crate.
-use crate::errors::Error;
+#[macro_use]
+extern crate failure;
+use crate::errors::Result;
 use core::hash::Hash as CoreHash;
 use serde::Serialize;
 use to_vec::ToVec;
@@ -13,7 +15,7 @@ pub trait Hash: AsRef<[u8]> + ToVec<u8> + Default + CoreHash + Copy + PartialEq 
     where
         Self: Sized;
     /// Creates a new hash from the inputted data. Data must be serializable for hash to function.
-    fn new<D: Serialize>(data: &D) -> Result<Self, Error>
+    fn new<D: Serialize>(data: &D) -> Result<Self>
     where
         Self: Sized;
 }

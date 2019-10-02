@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 serde = { version = "1.0.97", features = ["derive"] }
 to_vec = "*"
+failure = "0.1.5"
