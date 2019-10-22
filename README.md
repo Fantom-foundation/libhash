@@ -1,6 +1,6 @@
 libhash
 ===========
-[![Build Status](https://travis-ci.org/Fantom-foundation/libhash.svg?branch=master)](https://travis-ci.org/Fantom-foundation/libhash)
+![Rust: nightly](https://img.shields.io/badge/Rust-nightly-blue.svg) ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg) [![Build Status](https://travis-ci.org/Fantom-foundation/evm-rs.svg?branch=master)](https://travis-ci.org/Fantom-foundation/evm-rs)
 
 libhash in Rust.
 
@@ -23,7 +23,7 @@ An example of an implementation of this trait can be found in the libhash-sha3 c
 ### Step-by-step guide
 ```bash
 # Install Rust (nightly)
-$ curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly
 # Install cargo-make (cross-platform feature-rich reimplementation of Make)
 $ cargo install --force cargo-make
 # Install rustfmt (Rust formatter)
