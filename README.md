@@ -1,6 +1,6 @@
 libhash
 ===========
-[![Build Status](https://travis-ci.org/Fantom-foundation/libhash.svg?branch=master)](https://travis-ci.org/Fantom-foundation/libhash)
+[![Rust: nightly](https://img.shields.io/badge/Rust-nightly-blue.svg)](https://www.rust-lang.org) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![Build Status](https://travis-ci.org/Fantom-foundation/libhash.svg?branch=master)](https://travis-ci.org/Fantom-foundation/libhash)
 
 libhash in Rust.
 
@@ -20,14 +20,17 @@ This crate defines a trait which contains commonly used behaviours for hashing.
 An example of an implementation of this trait can be found in the libhash-sha3 crate:
 [`libhash-sha3`](https://github.com/Fantom-foundation/libhash-sha3)
 
-### Step-by-step guide
+### CLI instructions
+
 ```bash
 # Install Rust (nightly)
-$ curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+$ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --default-toolchain nightly
 # Install cargo-make (cross-platform feature-rich reimplementation of Make)
 $ cargo install --force cargo-make
 # Install rustfmt (Rust formatter)
 $ rustup component add rustfmt
+# Install clippy (Rust linter)
+$ rustup component add clippy
 # Clone this repo
 $ git clone https://github.com/Fantom-foundation/libhash && cd libhash
 # Run tests
