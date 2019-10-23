@@ -3,13 +3,16 @@
 #[macro_use]
 extern crate failure;
 use crate::errors::Result;
+use core::fmt::Display;
 use core::hash::Hash as CoreHash;
 use serde::Serialize;
 use to_vec::ToVec;
 
 /// The Hashing trait. So far, the trait requires an array of 8-bit unsigned integers as a defined
 /// type.
-pub trait Hash: AsRef<[u8]> + ToVec<u8> + Default + CoreHash + Copy + PartialEq + Send {
+pub trait Hash:
+    AsRef<[u8]> + ToVec<u8> + Default + CoreHash + Copy + PartialEq + Send + Display
+{
     /// Creates new Hash out of the provided digest.
     fn new_from_digest(digest: &[u8]) -> Self
     where
